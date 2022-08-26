@@ -3,6 +3,12 @@
   "displayName": "ghdocs-goer",
   "description": "Go to a browser URL based on the current file path",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/peterbe/ghdocs-goer"
+  },
+  "icon": "icon.png",
+  "license": "MIT",
   "engines": {
     "vscode": "^1.70.0"
   },
