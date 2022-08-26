@@ -31,6 +31,3 @@ jobs:
 
       - run: npm test
         if: runner.os != 'Linux'
-
-      # - name: Lint and test
-      #   run: npm run test
