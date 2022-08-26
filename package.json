@@ -8,6 +8,7 @@
     "url": "https://github.com/peterbe/ghdocs-goer"
   },
   "icon": "icon.png",
+  "publisher": "peterbe",
   "license": "MIT",
   "engines": {
     "vscode": "^1.70.0"
