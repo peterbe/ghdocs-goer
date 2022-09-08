@@ -50,13 +50,6 @@ export function activate(context: vscode.ExtensionContext) {
     )
   )
 
-  context.subscriptions.push(
-    vscode.commands.registerCommand(
-      "ghdocs-goer.openLocalhost",
-      openExternal("http://localhost:4000/")
-    )
-  )
-}
 
 // this method is called when your extension is deactivated
 export function deactivate() {}
