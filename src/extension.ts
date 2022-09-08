@@ -10,8 +10,18 @@ export function activate(context: vscode.ExtensionContext) {
   // This line of code will only be executed once when your extension is activated
   // console.log('Congratulations, your extension "ghdocs-goer" is now active!');
 
-  function getCurrentURI() {
-    return filenameToURI(vscode.window.activeTextEditor?.document.fileName)
+  function getCurrentURI(): {
+    error?: string
+    uri?: string
+  } {
+    try {
+      return {
+        uri: filenameToURI(vscode.window.activeTextEditor?.document.fileName),
+      }
+    } catch (err) {
+      if (err instanceof Error) return { error: err.message }
+      throw err
+    }
   }
 
   function openExternal(prefix: string) {
@@ -51,30 +61,22 @@ export function activate(context: vscode.ExtensionContext) {
 // this method is called when your extension is deactivated
 export function deactivate() {}
 
-function filenameToURI(fileName: string | undefined): {
-  error?: string
-  uri?: string
-} {
-  if (fileName) {
-    if (fileName.endsWith(".md")) {
-      const split = fileName.split(sep)
-      if (split.includes("content")) {
-        const rest = split.slice(split.findIndex((x) => x === "content") + 1)
-        const last = rest.pop()
-        if (last && last !== "index.md") {
-          rest.push(last.replace(/\.md$/, ""))
-        }
-        const uri = rest.join("/")
-        return { uri }
-      } else {
-        return {
-          error: "Current .md file is not inside a 'content' directory",
-        }
+function filenameToURI(fileName: string | undefined) {
+  if (!fileName) throw new Error("No current file name open")
+
+  if (fileName.endsWith(".md")) {
+    const split = fileName.split(sep)
+    if (split.includes("content")) {
+      const rest = split.slice(split.findIndex((x) => x === "content") + 1)
+      const last = rest.pop()
+      if (last && last !== "index.md") {
+        rest.push(last.replace(/\.md$/, ""))
       }
+      return rest.join("/")
     } else {
-      return { error: "Current file is not a .md file" }
+      throw new Error("Current .md file is not inside a 'content' directory")
     }
   } else {
-    return { error: "No current file name open" }
+    throw new Error("Current file is not a .md file")
   }
 }
