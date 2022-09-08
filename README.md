@@ -13,7 +13,11 @@ Describe specific features of your extension including screenshots of your exten
 
 For example if there is an image subfolder under your extension project workspace:
 
+### Opening the current .md file in production
+
 ![screenshot](demo/screenshot.png)
+
+### Opening from a URL
 
 ![open from URL](demo/openfromurl.gif)
 
