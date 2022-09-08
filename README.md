@@ -13,7 +13,9 @@ Describe specific features of your extension including screenshots of your exten
 
 For example if there is an image subfolder under your extension project workspace:
 
-![screenshot](screenshot.png)
+![screenshot](demo/screenshot.png)
+
+![open from URL](demo/openfromurl.gif)
 
 ## How to use it
 
@@ -45,6 +47,10 @@ It's very early days.
 
 ## Release Notes
 
+### 2.0.0
+
+Support for "Open from URL".
+
 ### 1.0.0
 
 Basic testing release version.
@@ -56,3 +62,12 @@ Fixed issue #.
 ### 1.1.0
 
 Added features X, Y, and Z. -->
+
+## Contributing
+
+- Open this git repo in your VSCode, the press `F5` to open the debugger.
+
+- This will open a new window that you can immediately use.
+
+- When you edit any of the `.ts` files in the extension go over to
+  the other opened window and run the command `Developer: Reload Window`
