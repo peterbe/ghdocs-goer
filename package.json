@@ -1,8 +1,8 @@
 {
   "name": "ghdocs-goer",
   "displayName": "ghdocs-goer",
-  "description": "Go to a browser URL based on the current file path",
-  "version": "0.0.1",
+  "description": "Quickly navigate between browser and VSCode",
+  "version": "2.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/peterbe/ghdocs-goer"
@@ -18,18 +18,23 @@
   ],
   "activationEvents": [
     "onCommand:ghdocs-goer.openProd",
-    "onCommand:ghdocs-goer.openLocalhost"
+    "onCommand:ghdocs-goer.openLocalhost",
+    "onCommand:ghdocs-goer.openByURL"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "ghdocs-goer.openProd",
-        "title": "goer: Open in production"
+        "title": "goer: Open in production (in browser)"
       },
       {
         "command": "ghdocs-goer.openLocalhost",
-        "title": "goer: Open in localhost:4000"
+        "title": "goer: Open in localhost:4000 (in browser)"
+      },
+      {
+        "command": "ghdocs-goer.openByURL",
+        "title": "goer: Open from URL (in VSCode)"
       }
     ]
   },
