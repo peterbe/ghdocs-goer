@@ -49,7 +49,7 @@ export function activate(context: vscode.ExtensionContext) {
       openExternal("http://localhost:4000/")
     )
   )
-
+}
 
 // this method is called when your extension is deactivated
 export function deactivate() {}
