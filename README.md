@@ -51,6 +51,11 @@ It's very early days.
 
 ## Release Notes
 
+### 2.0.1
+
+Bug fix for when you're opening within a workspace but the *current*
+open file isn't within a `content` directory.
+
 ### 2.0.0
 
 Support for "Open from URL".

@@ -72,11 +72,8 @@ export function activate(context: vscode.ExtensionContext) {
           try {
             contentRoot = findContentsRoot(documentURI.path)
           } catch (err) {
-            if (err instanceof Error) {
-              vscode.window.showWarningMessage(err.message)
-              return
-            }
-            throw err
+            // If this fails, we'll deal with it later.
+            // But up next is to try from the workspace folder.
           }
         }
 
