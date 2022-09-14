@@ -51,6 +51,11 @@ It's very early days.
 
 ## Release Notes
 
+### 2.0.2
+
+Bug fix for when you're opening by URL and it contains something like
+`enterprise-cloud@latest` in the URL which is a virtual thing.
+
 ### 2.0.1
 
 Bug fix for when you're opening within a workspace but the *current*

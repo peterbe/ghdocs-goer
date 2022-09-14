@@ -2,7 +2,7 @@
   "name": "ghdocs-goer",
   "displayName": "ghdocs-goer",
   "description": "Quickly navigate between browser and VSCode",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/peterbe/ghdocs-goer"
