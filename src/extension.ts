@@ -145,6 +145,10 @@ function inputToPathName(value: string) {
   if (pathName.startsWith("/")) {
     pathName = pathName.slice(1)
   }
+  pathName = pathName.replace(
+    /(enterprise-cloud|free-pro-team|enterprise-server|github-ae)@(latest|[\d\.]+)\//,
+    ""
+  )
   return pathName
 }
 
